@@ -1,0 +1,18 @@
+<table>
+	<tr>
+		<th>Departure airport</th>
+		<th>Arrival airport</th>
+		<th></th>
+	</tr>
+	<% @flights.each do |flight| %>
+		<tr>
+			<td><%= flight.departure_airport %></td>
+			<td><%= flight.arrival_airport %></td>
+			<td><%= link_to "X", flight_path(flight), method: :delete %></td>
+		</tr>
+	<% end %>
+</table>
+
+<hr />
+
+<%= link_to "Make a new flight!!!!", new_flight_path %>
